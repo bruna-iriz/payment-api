@@ -3,6 +3,7 @@ package br.com.payment.api.resource;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
@@ -48,7 +49,7 @@ public class BuyerResource {
 
 	// Criando Buyer
 	@PostMapping
-	public ResponseEntity<Buyer> create(@RequestBody Buyer buyer, HttpServletResponse response) {
+	public ResponseEntity<Buyer> create(@Valid @RequestBody Buyer buyer, HttpServletResponse response) {
 		Buyer buyerSave = buyerServices.save(buyer);
 		publisher.publishEvent(new RecursoCriadoEvent(this, response, buyerSave.getIdBuyer()));
 

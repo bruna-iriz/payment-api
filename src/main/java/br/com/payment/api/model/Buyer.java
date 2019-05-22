@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "buyer")
@@ -15,7 +17,10 @@ public class Buyer {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long idBuyer;
 
+	@NotNull
+	@Size(min = 3, max = 50)
 	private String nameBuyer;
+	
 	private String emailBuyer;
 	private String cpfBuyer;
 
