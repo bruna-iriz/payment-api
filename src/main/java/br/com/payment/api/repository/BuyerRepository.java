@@ -12,4 +12,3 @@ public interface BuyerRepository extends JpaRepository<Buyer, Long> {
 	
 	List<Buyer> findAll();
 }
-	
