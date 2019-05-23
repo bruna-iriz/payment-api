@@ -15,21 +15,24 @@ public class Buyer {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long idBuyer;
+	private Long id;
 
 	@NotNull
 	@Size(min = 3, max = 50)
 	private String nameBuyer;
-	
+
 	private String emailBuyer;
+
+	@NotNull
+	@Size(min = 11, max = 11)
 	private String cpfBuyer;
 
-	public Long getIdBuyer() {
-		return idBuyer;
+	public Long getId() {
+		return id;
 	}
 
-	public void setIdBuyer(Long idBuyer) {
-		this.idBuyer = idBuyer;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getNameBuyer() {

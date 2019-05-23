@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.payment.api.event.RecursoCriadoEvent;
+import br.com.payment.api.event.ResourceCreateEvent;
 import br.com.payment.api.model.Buyer;
 import br.com.payment.api.repository.BuyerRepository;
 import br.com.payment.api.services.BuyerServices;
@@ -42,16 +42,16 @@ public class BuyerResource {
 	}
 
 	// Listando Buyers por ID
-	@GetMapping("/{idBuyer}")
-	public Buyer searchBuyerId(@PathVariable Long idBuyer) {
-		return buyerRepository.findOne(idBuyer);
+	@GetMapping("/{id}")
+	public Buyer searchBuyerId(@PathVariable Long id) {
+		return buyerRepository.findOne(id);
 	}
 
 	// Criando Buyer
 	@PostMapping
 	public ResponseEntity<Buyer> create(@Valid @RequestBody Buyer buyer, HttpServletResponse response) {
 		Buyer buyerSave = buyerServices.save(buyer);
-		publisher.publishEvent(new RecursoCriadoEvent(this, response, buyerSave.getIdBuyer()));
+		publisher.publishEvent(new ResourceCreateEvent(this, response, buyerSave.getId()));
 
 		return ResponseEntity.status(HttpStatus.CREATED).body(buyerSave);
 	}
