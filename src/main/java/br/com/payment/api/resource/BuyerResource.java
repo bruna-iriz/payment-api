@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -58,18 +59,19 @@ public class BuyerResource {
 		return ResponseEntity.status(HttpStatus.CREATED).body(buyerSave);
 	}
 
+	// Atualizando Buyer
+	@PutMapping("/{id}")
+	public ResponseEntity<Buyer> update(@PathVariable Long id, @Valid @RequestBody Buyer buyer) {
+		Buyer buyerSave = buyerServices.update(id, buyer);
+		return ResponseEntity.ok(buyerSave);
+
+	}
+
 	// Deletando Buyer
 	@DeleteMapping("/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable Long id) {
 		buyerRepository.delete(id);
 	}
-
-	/*
-	 * @ApiOperation(value="Atualiza um buyer")
-	 * 
-	 * @PutMapping("/buyers") public Buyer atualizaBuyer(@RequestBody @Valid
-	 * Buyer buyer) { return buyerRepository.save(buyer); }
-	 */
 
 }

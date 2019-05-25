@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -66,10 +67,11 @@ public class CardResource {
 		cardRepository.delete(id);
 	}
 
-	// Atualizar conta passando código através do Put
-	/*
-	 * @PutMapping("/{id}") public ResponseEntity<Card> atualizar(@PathVariable
-	 * Long id, @Valid @RequestBody Card card) { Card cardUpdate =
-	 * cardServices.update(id, card); return ResponseEntity.ok(cardUpdate); }
-	 */
+	// Atualizando Card
+	@PutMapping("/{id}")
+	public ResponseEntity<Card> update(@PathVariable Long id, @Valid @RequestBody Card card) {
+		Card cardSave = cardServices.update(id, card);
+		return ResponseEntity.ok(cardSave);
+
+	}
 }
