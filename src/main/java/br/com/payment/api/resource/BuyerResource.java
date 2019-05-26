@@ -67,6 +67,15 @@ public class BuyerResource {
 
 	}
 
+	// Atualizando Buyer Parcial
+	@PutMapping("/{id}/emailbuyer")
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void updatePropertyEmaill(@PathVariable Long id, @RequestBody String emailBuyer) {
+
+		buyerServices.updatePropertyEmail(id, emailBuyer);
+
+	}
+
 	// Deletando Buyer
 	@DeleteMapping("/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)

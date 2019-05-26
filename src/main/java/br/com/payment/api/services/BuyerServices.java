@@ -27,4 +27,11 @@ public class BuyerServices {
 		BeanUtils.copyProperties(buyer, buyerSave, "id");
 		return buyerRepository.save(buyerSave);
 	}
+
+	public void updatePropertyEmail(Long id, String emailBuyer) {
+		Buyer buyerSave = buyerRepository.findOne(id);
+		buyerSave.setEmailBuyer(emailBuyer);
+		buyerRepository.save(buyerSave);
+
+	}
 }
