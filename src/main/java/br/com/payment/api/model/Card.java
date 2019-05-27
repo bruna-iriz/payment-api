@@ -22,12 +22,15 @@ public class Card {
 	private String cardholdername;
 
 	@NotNull
+	@Size(min = 13, max = 16)
 	private String cardNumber;
 
 	@NotNull
+	@Size(min = 8, max = 8)
 	private String cardexpirationdate;
 
 	@NotNull
+	@Size(min = 3, max = 3)
 	private String cardcvv;
 
 	public Long getId() {
