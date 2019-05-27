@@ -33,9 +33,9 @@ Este método destina-se a inserir um novo comprador.
 }
 ```
 Onde,
-nameBuyer: nome do comprador
-emailBuyer: e-mail do comprador
-cpfBuyer: CPF do comprador
+- nameBuyer: nome do comprador
+- emailBuyer: e-mail do comprador
+- cpfBuyer: CPF do comprador
 
 **nameBuyer:** 
 Preenchimento obrigatório;
@@ -113,7 +113,7 @@ Consultando ID de número 2 antes requisitar a atualização:
 ![b_put1](https://user-images.githubusercontent.com/45856882/58395163-30a46d80-801d-11e9-98b1-7ef7fb736648.png)
 
 ## Retorno com sucesso | [Code Response 200 – OK]
-ID de número 2 após requisitar a atualização na propriedade *emailBuyer*:
+ID de número 2 após requisitar a atualização na propriedade **emailBuyer**:
 ![b_put2](https://user-images.githubusercontent.com/45856882/58395164-313d0400-801d-11e9-87f6-08beec2bdb90.png)
 
 ****
@@ -162,10 +162,10 @@ Este método destina-se a inserir um novo registro de cartão.
 }
 ```
 Onde,
-cardholdername: Nome do titular impresso no cartão. Ex.: "Judite Marques".
-cardnumber: Número impresso no cartão. Ex.: “5338045395041232”.
-cardexpirationdate:  Data de expiração do cartão. Ex.: "20190812".
-cardcvv: Numero do CVV (Codigo de verificação do cartão). Ex.: “283”.
+- cardholdername: Nome do titular impresso no cartão. Ex.: "Judite Marques".
+- cardnumber: Número impresso no cartão. Ex.: “5338045395041232”.
+- cardexpirationdate:  Data de expiração do cartão. Ex.: "20190812".
+- cardcvv: Numero do CVV (Codigo de verificação do cartão). Ex.: “283”.
 
 **cardholdername:** 
 Preenchimento obrigatório;
@@ -201,10 +201,10 @@ Causa: enviado como nulo os campos de preenchimento obrigatório nas propriedade
 
 ## Retorno com erro | Tratamento de exceção [Code Response 400 – Bad Request]
 Causa: quantidade de caracteres abaixo do esperado:
-cardholdername: mínimo = 3, enviado 2
-cardnumber: mínimo = 13, enviado 9
-cardexpirationdate: mínimo = 8, enviado 2
-cardcvv: mínimo = 3, enviado = 2
+- cardholdername: mínimo = 3, enviado 2
+- cardnumber: mínimo = 13, enviado 9
+- cardexpirationdate: mínimo = 8, enviado 2
+- cardcvv: mínimo = 3, enviado = 2
 ![c_post5](https://user-images.githubusercontent.com/45856882/58395707-ecff3300-801f-11e9-9889-30d0c4f798f9.png)
 
 ## Retorno com erro | Tratamento de exceção [Code Response 400 – Bad Request]
