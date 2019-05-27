@@ -209,10 +209,11 @@ Causa: quantidade de caracteres abaixo do esperado:
 
 ## Retorno com erro | Tratamento de exceção [Code Response 400 – Bad Request]
 Causa: quantidade de caracteres acima do esperado:
-cardholdername: máximo = 50, enviado 59
-cardnumber: máximo = 16, enviado 18
-cardexpirationdate: máximo = 8, enviado 10
-cardcvv: máximo = 3, enviado = 4
+
+- cardholdername: máximo = 50, enviado 59
+- cardnumber: máximo = 16, enviado 18
+- cardexpirationdate: máximo = 8, enviado 10
+- cardcvv: máximo = 3, enviado = 4
 
 ![c_post6](https://user-images.githubusercontent.com/45856882/58395708-ecff3300-801f-11e9-91e3-b74480b4c1f4.png)
 
@@ -248,7 +249,7 @@ Consultando ID de número 1 antes requisitar a atualização:
 ![c_get2](https://user-images.githubusercontent.com/45856882/58396083-80853380-8021-11e9-8826-1641f69a7d54.png)
 
 ## Retorno com sucesso | [Code Response 200 – OK]
-ID de número 1 após requisitar a atualização na propriedade *cardexpirationdate*:
+ID de número 1 após requisitar a atualização na propriedade **cardexpirationdate**:
 ![c_put2](https://user-images.githubusercontent.com/45856882/58396263-4c5e4280-8022-11e9-90c8-cc0e13a92d37.png)
 
 ****
