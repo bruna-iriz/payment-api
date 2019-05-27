@@ -33,9 +33,9 @@ Este método destina-se a inserir um novo comprador.
 }
 ```
 Onde,
-- nameBuyer: nome do comprador
-- emailBuyer: e-mail do comprador
-- cpfBuyer: CPF do comprador
+- nameBuyer: nome do comprador. Ex.: "Juliana Moraes".
+- emailBuyer: e-mail do comprador. Ex.: "juliana@gmail.com".
+- cpfBuyer: CPF do comprador. Ex.: "99999999999".
 
 **nameBuyer:** 
 - Preenchimento obrigatório;
@@ -178,7 +178,7 @@ Onde,
 - cardcvv: Numero do CVV (Codigo de verificação do cartão). Ex.: “283”.
 
 **cardholdername:** 
-- - Preenchimento obrigatório;
+- Preenchimento obrigatório;
 Tamanho (mínimo = 3, máximo = 50)
 
 **cardnumber:**
