@@ -6,7 +6,7 @@ Desenvolvida em linguagem de programação Java implantando princípios REST, e 
 - Banco de dados: MySQL;
 - Conexão com MySQL: Hibernate;
 - Framework: Spring Boot
-- Ferramenta de testes: Postman
+- Postman
 
 ## Buyer / Comprador | Methods:
 -	POST/buyers
